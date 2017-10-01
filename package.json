@@ -2,6 +2,10 @@
   "name": "the_movie_db_react",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "gh-pages": "^0.12.0",
+    "react-scripts": "1.0.14"
+  },
   "dependencies": {
     "react": "^16.0.0",
     "react-autosuggest": "^9.3.2",
@@ -9,9 +13,8 @@
     "react-d3-basic": "^1.6.11",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
+    "react-router": "^3.0.0",
     "react-router-redux": "^4.0.8",
-    "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
