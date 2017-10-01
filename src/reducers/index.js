@@ -1,9 +1,16 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 import {
+    FETCH_CASTS, FETCH_CASTS_FAILURE, FETCH_CASTS_SUCCESS,
     FETCH_MOVIE, FETCH_MOVIE_FAILURE, FETCH_MOVIE_SUCCESS, FETCH_MOVIES, FETCH_MOVIES_FAILURE,
     FETCH_MOVIES_SUCCESS
 } from "../consts";
+
+const defaultState = {
+    isFetching: false,
+    item:{},
+    error:{}
+};
 
 const defaultStateList = {
     isFetching: false,
@@ -24,10 +31,25 @@ const movieList = (state = defaultStateList, action) => {
     }
 };
 
-const defaultState = {
-    isFetching: false,
-    item:{},
-    error:{}
+const castList = (state = defaultStateList, action) => {
+    switch (action.type){
+        case FETCH_CASTS:
+            return Object.assign({}, state, {
+                isFetching:true
+            });
+        case FETCH_CASTS_SUCCESS:
+            return Object.assign({}, state, {
+                isFetching:false,
+                items:action.data
+            });
+        case FETCH_CASTS_FAILURE:
+            return Object.assign({}, state, {
+                isFetching:false,
+                error:action.data
+            });
+        default:
+            return state;
+    }
 };
 
 const movieDetail = (state = defaultState, action) => {
@@ -54,6 +76,7 @@ const movieDetail = (state = defaultState, action) => {
 const movieApp = combineReducers({
     movieList,
     movieDetail,
+    castList,
     routing: routerReducer
 });
 
