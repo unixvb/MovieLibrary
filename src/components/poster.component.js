@@ -4,7 +4,7 @@ import {Image} from 'react-bootstrap';
 
 export default function PosterComponent(props) {
     const style = {
-        'border-radius': '4px 4px 0 0'
+        borderRadius: '4px 4px 0 0'
     };
     return (
         <Image key={props.id}

@@ -15,12 +15,12 @@ export default class MoviesListComponent extends Component {
             return (
                 <Col sm={6} md={3}
                      key={movie.id}>
-                    <div class="thumbnail">
+                    <div className="thumbnail">
                         <Link to={'/movie/' + movie.id}>
                             <PosterComponent id={movie.id}
                                              path={movie.poster_path}
                                              responsive/>
-                            <div class="caption">
+                            <div className="caption">
                                 <h3>{movie.title}</h3>
                                 <p>{movie.overview.substr(0, 70) + '...'}</p>
                             </div>

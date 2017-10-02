@@ -3,7 +3,7 @@ import {Col} from 'react-bootstrap';
 import {IMG_URL, IMG_W150} from "../consts";
 import {Thumbnail} from 'react-bootstrap';
 
-export default function CastListComponent(data) {
+export default function CastListComponent({data}) {
     let casts = data.map(function (cast) {
         if (cast.profile_path !== null) {
             return (

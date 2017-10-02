@@ -80,7 +80,7 @@ export function fetchMoviesList() {
 export function fetchMovieDetail(id) {
     return function (dispatch) {
         dispatch(fetchMovie());
-        return fetch(API_URL + '/movie/' + id + API_KEY)
+        return fetch(API_URL + 'movie/' + id + API_KEY)
             .then(response => response.json())
             .then(data => dispatch(fetchMovieSuccess(data)))
             .catch(error => dispatch(fetchMovieFail(error)))
@@ -90,7 +90,7 @@ export function fetchMovieDetail(id) {
 export function fetchCastList(id) {
     return function (dispatch) {
         dispatch(fetchCasts());
-        return fetch(API_URL + '/movie/' + id + '/casts' + API_KEY)
+        return fetch(API_URL + 'movie/' + id + '/casts' + API_KEY)
             .then(response => response.json())
             .then(json => json.cast)
             .then(data => dispatch(fetchCastsSuccess(data)))

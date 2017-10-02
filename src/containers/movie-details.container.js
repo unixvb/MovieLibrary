@@ -37,12 +37,13 @@ class MovieDetails extends Component {
         if(movie.hasOwnProperty('id')) {
             return(
                 <Grid fluid={false}>
-                    {movie.id}
                     <Row>
-                        <Col xs={12} sm={6} md={4}>
+                        <Col xs={12} sm={12} md={12}>
                             <BackdropComponent id={movie.id} path={movie.backdrop_path} responsive />
                         </Col>
-                        <Col xs={12} sm={6} md={8}>
+                    </Row>
+                    <Row>
+                        <Col xs={12} sm={6} md={12}>
                             <MovieInfoComponent movie={movie}/>
                             <CastListComponent data={casts.slice(0,5)} />
                         </Col>

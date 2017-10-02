@@ -4,12 +4,12 @@ import './App.css';
 class App extends Component {
     render() {
         return (
-            <div class="app">
-                <div class="app-header">
+            <div className="app">
+                <div className="app-header">
                     <h1>Movie Gallery</h1>
                     <p>Developed by Andrii Ivaniv</p>
                 </div>
-                <div class="gallery">
+                <div className="gallery">
                     {this.props.children}
                 </div>
             </div>
