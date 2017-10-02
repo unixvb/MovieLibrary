@@ -2,7 +2,7 @@ import {
     API_KEY,
     API_URL, FETCH_CASTS, FETCH_CASTS_FAILURE, FETCH_CASTS_SUCCESS,
     FETCH_MOVIE, FETCH_MOVIE_FAILURE, FETCH_MOVIE_SUCCESS, FETCH_MOVIES, FETCH_MOVIES_FAILURE,
-    FETCH_MOVIES_SUCCESS, SEND_RATING, SEND_RATING_FAILURE, SEND_RATING_SUCCESS
+    FETCH_MOVIES_SUCCESS, GUEST_SESSION_ID, SEND_RATING, SEND_RATING_FAILURE, SEND_RATING_SUCCESS
 } from "../consts";
 
 function fetchMovies() {
@@ -119,11 +119,11 @@ export function fetchCastList(id) {
 }
 
 export function sendMovieRating(id, value) {
-        return fetch(API_URL + 'movie/' + id + '/rating' + API_KEY, {
+        return fetch(API_URL + 'movie/' + id + '/rating' + API_KEY + GUEST_SESSION_ID, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json;charset=utf-8',
             },
             body: JSON.stringify({
                 value: value

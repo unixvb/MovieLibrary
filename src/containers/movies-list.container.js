@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {MoviesList} from "../components";
 
 class MoviesContainer extends Component {
-
     componentDidMount() {
         if (!this.props.params.keyword) {
             const {dispatch} = this.props;

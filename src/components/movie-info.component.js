@@ -1,6 +1,7 @@
 import React from 'react'
 import {Row, Col, Glyphicon} from 'react-bootstrap'
-import {sendMovieRating} from "../actions/index";
+import {sendMovieRating} from '../actions/index';
+import NumericInput from 'react-numeric-input';
 
 export default function MovieInfoComponent(props) {
     let value = 8.5;
@@ -11,6 +12,10 @@ export default function MovieInfoComponent(props) {
         fontWeight: 'bold',
         textTransform: 'uppercase'
     };
+
+    function onChange(num) {
+        value = num;
+    }
 
     return (
         <div style={style}>
@@ -31,9 +36,24 @@ export default function MovieInfoComponent(props) {
                         {props.movie.vote_count}
                     </h3>
                 </Col>
-                <Col xs={12}>
-                    <input type="text" value={value}/>
-                    <button onClick={() => {sendMovieRating(props.movie.id, value)}}/>
+                <Col xs={8}>
+                </Col>
+                <Col xs={2}>
+                    <NumericInput min={1}
+                                  max={10}
+                                  step={0.5}
+                                  precision={1}
+                                  value={8.5}
+                                  onChange={onChange}
+                                  readOnly={true}
+                                  className="form-control"/>
+                </Col>
+                <Col xs={2}>
+                    <button className="btn btn-default"
+                            onClick={() => {
+                                sendMovieRating(props.movie.id, value)
+                            }}>Rate this movie
+                    </button>
                 </Col>
             </Row>
             <Row>

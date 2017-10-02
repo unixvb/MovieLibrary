@@ -1,5 +1,6 @@
 export const API_URL = 'https://api.themoviedb.org/3/';
 export const API_KEY = '?api_key=92d590ff486c6a1d7e8d20b793c89a8a';
+export const GUEST_SESSION_ID = '&guest_session_id=ab2139d3512755ce229b48b132321776';
 export const IMG_URL = 'https://image.tmdb.org/t/p/';
 export const IMG_W150 = 'w150/';
 export const IMG_W342 = 'w342/';
