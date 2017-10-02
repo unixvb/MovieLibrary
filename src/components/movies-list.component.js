@@ -7,6 +7,8 @@ export default class MoviesListComponent extends Component {
     render() {
         const style = {
             margin: '0 -15px',
+            display: 'flex',
+            flexWrap: 'wrap'
         };
 
         let movies = this.props.movies.filter(function (movie) {

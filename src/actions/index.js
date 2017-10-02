@@ -2,7 +2,7 @@ import {
     API_KEY,
     API_URL, FETCH_CASTS, FETCH_CASTS_FAILURE, FETCH_CASTS_SUCCESS,
     FETCH_MOVIE, FETCH_MOVIE_FAILURE, FETCH_MOVIE_SUCCESS, FETCH_MOVIES, FETCH_MOVIES_FAILURE,
-    FETCH_MOVIES_SUCCESS, GUEST_SESSION_ID, SEND_RATING, SEND_RATING_FAILURE, SEND_RATING_SUCCESS
+    FETCH_MOVIES_SUCCESS, GUEST_SESSION_ID, PAGE, SEND_RATING, SEND_RATING_FAILURE, SEND_RATING_SUCCESS
 } from "../consts";
 
 function fetchMovies() {
@@ -86,10 +86,10 @@ function fetchMovieFail(error) {
 }
 
 
-export function fetchMoviesList() {
+export function fetchMoviesList(pageNumber) {
     return function (dispatch) {
         dispatch(fetchMovies());
-        return fetch(API_URL + 'discover/movie' + API_KEY)
+        return fetch(API_URL + 'discover/movie' + API_KEY + PAGE + pageNumber)
             .then(response => response.json())
             .then(json => json.results)
             .then(data => dispatch(fetchMoviesSuccess(data)))
