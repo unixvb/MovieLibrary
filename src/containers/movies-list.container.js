@@ -12,31 +12,11 @@ class MoviesContainer extends Component {
         }
     }
 
-    //
-    // componentWillReceiveProps(nextProps) {
-    //     const {dispatch} = this.props;
-    //     if(nextProps.params.keyword && this.props.params.keyword !== nextProps.params.keyword) {
-    //         dispatch(searchMovieList(nextProps.params.keyword));
-    //     }
-    // }
-
-
-    // shouldComponentUpdate(nextProps, nextState){
-    //     if(this.props.movies !== nextProps.movies) {
-    //         return true;
-    //     }
-    //     return false;
-    // }
-
     render() {
         const {movies} = this.props;
         return (
             <MoviesList movies={movies}/>
         );
-        // if(movies.length > 0) {
-        // } else {
-        // return (<DisplayMsg />);
-        // }
     }
 }
 

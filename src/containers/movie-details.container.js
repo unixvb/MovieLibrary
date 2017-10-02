@@ -12,22 +12,6 @@ class MovieDetails extends Component {
         dispatch(fetchCastList(this.props.params.id));
     }
 
-    componentWillReceiveProps(nextProps) {
-        const {dispatch} = this.props;
-        if(nextProps.params.id && this.props.params.id !== nextProps.params.id) {
-            dispatch(fetchMovieDetail(nextProps.params.id));
-            dispatch(fetchCastList(nextProps.params.id));
-        }
-    }
-
-    shouldComponentUpdate(nextProps, nextState){
-        if(this.props.movie.id !== nextProps.movie.id) {
-          //console.log('shouldComponentUpdate');
-          return true;
-        }
-        return false;
-    }
-
     render() {
         const {movie, casts, isFetcing_movie, isFetcing_casts} = this.props;
 

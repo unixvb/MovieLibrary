@@ -2,7 +2,7 @@ import {
     API_KEY,
     API_URL, FETCH_CASTS, FETCH_CASTS_FAILURE, FETCH_CASTS_SUCCESS,
     FETCH_MOVIE, FETCH_MOVIE_FAILURE, FETCH_MOVIE_SUCCESS, FETCH_MOVIES, FETCH_MOVIES_FAILURE,
-    FETCH_MOVIES_SUCCESS
+    FETCH_MOVIES_SUCCESS, SEND_RATING, SEND_RATING_FAILURE, SEND_RATING_SUCCESS
 } from "../consts";
 
 function fetchMovies() {
@@ -20,6 +20,26 @@ function fetchMovie() {
 function fetchCasts() {
     return {
         type: FETCH_CASTS
+    };
+}
+
+function sendRating() {
+    return {
+        type: SEND_RATING
+    };
+}
+
+function sendRatingSuccess(data) {
+    return {
+        type: SEND_RATING_SUCCESS,
+        data
+    };
+}
+
+function sendRatingFail(error) {
+    return {
+        type: SEND_RATING_FAILURE,
+        error
     };
 }
 
@@ -96,4 +116,20 @@ export function fetchCastList(id) {
             .then(data => dispatch(fetchCastsSuccess(data)))
             .catch(error => dispatch(fetchCastsFail(error)))
     }
+}
+
+export function sendMovieRating(id, value) {
+        return fetch(API_URL + 'movie/' + id + '/rating' + API_KEY, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                value: value
+            })
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
 }
