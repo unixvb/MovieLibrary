@@ -1,5 +1,61 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  min-height: 100vh;
+  font: normal 16px sans-serif;
+}
+
+.app-header {
+  text-align: center;
+}
+
+.app-header h1 {
+  margin-top: 70px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+  color: #58595a;
+}
+
+.app-header p {
+  margin: 30px auto;
+  font-size: 18px;
+  color: #85878c;
+}
+
+.gallery {
+  padding: 40px;
+}
+
+.gallery .thumbnail {
+  max-width: 342px;
+  margin: 0 auto 30px;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 4px;
+  border: none;
+  transition: 0.15s ease-in-out;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.gallery .thumbnail:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+
+.gallery .caption{
+  padding: 26px 30px;
+  text-align: center;
+}
+
+.gallery .caption h3 {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.gallery .caption p {
+  font-size: 11px;
+  color: #7b7d7d;
+  margin: 0;
 }

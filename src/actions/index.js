@@ -2,7 +2,7 @@ import {
     API_KEY,
     API_URL, FETCH_CASTS, FETCH_CASTS_FAILURE, FETCH_CASTS_SUCCESS,
     FETCH_MOVIE, FETCH_MOVIE_FAILURE, FETCH_MOVIE_SUCCESS, FETCH_MOVIES, FETCH_MOVIES_FAILURE,
-    FETCH_MOVIES_SUCCESS, GUEST_SESSION_ID, PAGE, SEND_RATING, SEND_RATING_FAILURE, SEND_RATING_SUCCESS
+    FETCH_MOVIES_SUCCESS, GUEST_SESSION_ID, PAGE
 } from "../consts";
 
 function fetchMovies() {
@@ -20,26 +20,6 @@ function fetchMovie() {
 function fetchCasts() {
     return {
         type: FETCH_CASTS
-    };
-}
-
-function sendRating() {
-    return {
-        type: SEND_RATING
-    };
-}
-
-function sendRatingSuccess(data) {
-    return {
-        type: SEND_RATING_SUCCESS,
-        data
-    };
-}
-
-function sendRatingFail(error) {
-    return {
-        type: SEND_RATING_FAILURE,
-        error
     };
 }
 
@@ -130,6 +110,6 @@ export function sendMovieRating(id, value) {
             })
         })
             .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.log(error))
+            .then(data => console.log(data.status_message))
+            .catch(error => console.log(error.status_message))
 }

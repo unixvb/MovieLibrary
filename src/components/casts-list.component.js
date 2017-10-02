@@ -1,7 +1,8 @@
 import React from 'react';
 import {Col} from 'react-bootstrap';
-import {IMG_URL, IMG_W150} from "../consts";
 import {Thumbnail} from 'react-bootstrap';
+
+import {IMG_URL, IMG_W150} from "../consts";
 
 export default function CastListComponent({data}) {
     let casts = data.map(function (cast) {

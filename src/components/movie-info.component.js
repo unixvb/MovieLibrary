@@ -1,13 +1,13 @@
 import React from 'react'
 import {Row, Col, Glyphicon} from 'react-bootstrap'
-import {sendMovieRating} from '../actions/index';
 import NumericInput from 'react-numeric-input';
+import {Link} from "react-router";
+
+import {sendMovieRating} from '../actions/index';
 
 export default function MovieInfoComponent(props) {
     let value = 8.5;
-    const style = {
-        // paddingLeft: '15px'
-    };
+
     const h1Style = {
         fontWeight: 'bold',
         textTransform: 'uppercase'
@@ -18,7 +18,7 @@ export default function MovieInfoComponent(props) {
     }
 
     return (
-        <div style={style}>
+        <div>
             <Row>
                 <h1 style={h1Style}> {props.movie.title} </h1>
                 <Col xs={8}>
@@ -36,9 +36,12 @@ export default function MovieInfoComponent(props) {
                         {props.movie.vote_count}
                     </h3>
                 </Col>
-                <Col xs={8}>
+                <Col xs={7}>
+                    <Link to="/">
+                        <button type="button" className="btn default btn-xs">Back to main page</button>
+                    </Link>
                 </Col>
-                <Col xs={2}>
+                <Col xs={3}>
                     <NumericInput min={1}
                                   max={10}
                                   step={0.5}

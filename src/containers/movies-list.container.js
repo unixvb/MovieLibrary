@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {fetchMoviesList} from '../actions';
 import {connect} from 'react-redux';
+import {Pagination, Row} from "react-bootstrap";
+
 import {MoviesList} from "../components";
-import {Col, Pagination, Row} from "react-bootstrap";
+import {fetchMoviesList} from '../actions';
 
 class MoviesContainer extends Component {
     constructor(props) {
@@ -56,7 +57,6 @@ class MoviesContainer extends Component {
 function mapStateToProps(state, ownProps) {
     const {movieList} = state;
     const {isFetcing_movieList, items: movies, error_movieList} = movieList;
-
     const keyword = ownProps.params.keyword;
     return {movies, keyword}
 }

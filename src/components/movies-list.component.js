@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 import {Row, Col} from 'react-bootstrap';
+
 import PosterComponent from "./poster.component";
 
 export default class MoviesListComponent extends Component {

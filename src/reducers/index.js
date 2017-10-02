@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
+
 import {
     FETCH_CASTS, FETCH_CASTS_FAILURE, FETCH_CASTS_SUCCESS,
     FETCH_MOVIE, FETCH_MOVIE_FAILURE, FETCH_MOVIE_SUCCESS, FETCH_MOVIES, FETCH_MOVIES_FAILURE,
