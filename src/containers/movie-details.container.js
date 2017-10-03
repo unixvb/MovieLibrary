@@ -22,19 +22,15 @@ class MovieDetails extends Component {
 
         if (movie.hasOwnProperty('id')) {
             return (
-                <Grid fluid={false}>
-                    <Row>
-                        <Col xs={12} sm={12} md={12}>
-                            <BackdropComponent id={movie.id} path={movie.backdrop_path} responsive/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12} sm={6} md={12}>
-                            <MovieInfoComponent movie={movie}/>
-                            <CastListComponent data={casts.slice(0, 5)}/>
-                        </Col>
-                    </Row>
-                </Grid>
+                <div>
+                    <div>
+                        <BackdropComponent id={movie.id} path={movie.backdrop_path} responsive/>
+                    </div>
+                    <div>
+                        <MovieInfoComponent movie={movie}/>
+                        <CastListComponent data={casts.slice(0, 6)}/>
+                    </div>
+                </div>
             );
         } else
             return null;

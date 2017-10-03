@@ -6,6 +6,13 @@ body {
   font: normal 16px sans-serif;
 }
 
+#root {
+  margin: 10px auto;
+  width: 95%;
+  min-width: 360px;
+  max-width: 945px;
+}
+
 .app-header {
   text-align: center;
 }
@@ -24,7 +31,10 @@ body {
 }
 
 .gallery {
-  padding: 40px;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .gallery .thumbnail {
@@ -58,4 +68,8 @@ body {
   font-size: 11px;
   color: #7b7d7d;
   margin: 0;
+}
+
+.react-numeric-input {
+  max-width: 70px;
 }

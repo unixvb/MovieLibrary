@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Pagination, Row} from "react-bootstrap";
+import {Pagination} from "react-bootstrap";
 
 import {MoviesList} from "../components";
 import {fetchMoviesList} from '../actions';
@@ -32,7 +32,7 @@ class MoviesContainer extends Component {
     render() {
         const {movies} = this.props;
         return (
-            <Row>
+            <div>
                 <MoviesList movies={movies}/>
                 <div style={{display: 'flex'}}>
                     <div style={{margin: '0 auto'}}>
@@ -49,7 +49,7 @@ class MoviesContainer extends Component {
                             onSelect={(number) => this.handleSelect(number)}/>
                     </div>
                 </div>
-            </Row>
+            </div>
         );
     }
 }

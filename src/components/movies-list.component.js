@@ -7,7 +7,8 @@ import PosterComponent from "./poster.component";
 export default class MoviesListComponent extends Component {
     render() {
         const style = {
-            margin: '0 -15px',
+            width: '100%',
+            margin: '0 auto',
             display: 'flex',
             flexWrap: 'wrap'
         };
@@ -17,7 +18,8 @@ export default class MoviesListComponent extends Component {
         }).map(function (movie) {
             return (
                 <Col sm={6} md={3}
-                     key={movie.id}>
+                     key={movie.id}
+                     style={{margin: '0 auto'}}>
                     <div className="thumbnail">
                         <Link to={'/movie/' + movie.id}>
                             <PosterComponent id={movie.id}

@@ -1,5 +1,4 @@
 import React from 'react';
-import {Col} from 'react-bootstrap';
 import {Thumbnail} from 'react-bootstrap';
 
 import {IMG_URL, IMG_W150} from "../consts";
@@ -8,12 +7,16 @@ export default function CastListComponent({data}) {
     let casts = data.map(function (cast) {
         if (cast.profile_path !== null) {
             return (
-                <Col xs={4} sm={3} md={2} key={cast.id}>
+                <div key={cast.id}
+                    style={{
+                    margin: '0 auto',
+                    padding: '0 10px'
+                }}>
                     <Thumbnail src={IMG_URL + IMG_W150 + cast.profile_path}
                                alt={cast.name}>
                         <p>{cast.name}</p>
                     </Thumbnail>
-                </Col>
+                </div>
             );
         }
     });
@@ -21,7 +24,14 @@ export default function CastListComponent({data}) {
     return (
         <div>
             <h3>Casts</h3>
-            {casts}
+            <div style={{
+                width: '100%',
+                display: 'flex',
+                flexWrap: 'wrap',
+                marginTop: '15px'
+            }}>
+                {casts}
+            </div>
         </div>
     );
 }
