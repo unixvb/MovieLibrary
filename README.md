@@ -7,9 +7,13 @@ Simple movie library which use TheMovieDb API https://www.themoviedb.org/documen
 Clone or download repositiry
 
 > cd MovieLibrary
+
 > npm i
+
 > npm start // localhost:3000
+
 or
+
 > npm run 2055 // localhost:2055
 
 ## Usage
